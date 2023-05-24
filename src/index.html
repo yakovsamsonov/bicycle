@@ -3,14 +3,78 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Everland</title>
+  <title>Bicycle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Страница с информацией о велопрогулках">
+  <meta name="keywords" content="Велосипеды, велопрогулки, маршруты, выбор велосипеда">
 </head>
 
-<body>
-  <header class="header">EVERT
-    <p class="header__text">Privet</p>
+<body class="page">
+  <header class="header">
+    <nav class="header__link-box">
+      <a href="#" onclick="return false;" class="header__link animated-scroll" data-target-block="subway">Покрытия и
+        градиенты</a>
+      <a href="#" onclick="return false;" class="header__link animated-scroll"
+        data-target-block="bicycle">Велосипеды</a>
+      <a href="#" onclick="return false;" class="header__link animated-scroll"
+        data-target-block="training">Тренировки</a>
+    </nav>
   </header>
+  <main class="content">
+    <section class="intro">
+      <h1>Шоссе, ТТ и Грэвел</h1>
+      <p>Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам – нужно только определиться с
+        выбором велосипеда и отправиться в путь.</p>
+      <a href="#">Подробнее</a>
+    </section>
+    <section class="quote" aria-label="Цитаты">
+      <picture>
+        <source srcset="<%=require('./images/quote_2x.png')%>" media="(min-width: 1440px)">
+        <source srcset="<%=require('./images/quote.png')%>" media="(max-width: 1439px)">
+        <img src="<%=require('./images/quote.png')%>" alt="Дорога, северный пейзаж, туман, велосипед">
+      </picture>
+      <figure>
+        <blockquote>«Катайся много или мало, долго или коротко, как хочешь - но катайся»</blockquote>
+        <figcaption>
+          <p>Эдди Меркс</p>
+          <p>Велогонщик</p>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="subway" id="subway">
+      <h2>Шоссе</h2>
+      <p>На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то горы или равнины. Гонки проходят
+        в командном пелотоне, но тренироваться можно и самостоятельно.</p>
+    </section>
+    <section class="bicycle" id="bicycle">
+      <h2>Велосипеды</h2>
+      <nav>
+        <button type="radio">Шоссе</button>
+        <button type="radio">Грэвел</button>
+        <button type="radio">TT</button>
+      </nav>
+    </section>
+    <section class="training" id="training">
+      <h2>Тренировки</h2>
+      <p>Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать эти тренировки поможет
+        приложение Strava, а также это приложение позволит построить тренировочный план.</p>
+    </section>
+    <nav>
+      <a href="https://www.strava.com">Strava</a>
+      <a href="https://www.komoot.com">Komoot</a>
+    </nav>
+    <picture>
+      <source srcset="<%=require('./images/training_2x.png')%>" media="(min-width: 1440px)">
+      <source srcset="<%=require('./images/training.png')%>" media="(max-width: 1439px)">
+      <img src="<%=require('./images/training.png')%>" alt="Дорога, лес, поворот">
+    </picture>
+  </main>
+  <footer class="footer">
+    <h3>Подпишитесь на рассылку&nbsp;—</h3>
+    <form></form>
+    <p>© Road Club 2021</p>
+    <div></div>
+  </footer>
 
 </body>
 

@@ -1,0 +1,10 @@
+.page {
+  @include flex(column, center, center, 0px);
+  font-family: $fontFamily;
+  background-color: $lightBackground;
+  min-width: 304px;
+
+  &_dark {
+    background-color: $darkBackground;
+  }
+}

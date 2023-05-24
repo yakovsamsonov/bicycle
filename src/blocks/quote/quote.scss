@@ -1,0 +1,4 @@
+.quote {
+  @extend %limitedWidthSection;
+  padding: $verticalLargePadding $horizontalPadding $verticalPadding;
+}

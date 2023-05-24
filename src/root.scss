@@ -1,0 +1,63 @@
+
+$lightBackground: #f4f4f4;
+$darkBackground: #333333;
+$lightGreen: #24B47E;
+$darkGreen: #319E75;
+
+
+$fontFamily: 'Inter', 'Arial', sans-serif;
+$linkHoverOpacity: 0.75;
+
+$horizontalPadding: 120px;
+$horizontalPaddingMobile: 18px;
+$verticalPadding: 60px;
+$verticalLargePadding: 120px;
+
+@mixin flex($flex-direction, $justify-content, $align-items, $gap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+%zeroSpaces {
+  margin: 0;
+  padding: 0;
+}
+
+%limitedWidthSection {
+  box-sizing: border-box;
+  max-width: 1440px;
+  width: 100%;
+}
+
+%headerFontStyle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  color: #151515;
+}
+
+%textLinkStyle {
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity .3s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: $linkHoverOpacity;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+%buttonLinkStyle {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}

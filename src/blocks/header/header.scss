@@ -1,0 +1,14 @@
+.header {
+  @extend %limitedWidthSection;
+  padding: 28px $horizontalPadding;
+  float: right;
+
+  &__link-box {
+    @include flex(row, flex-end, center, 34px)
+  }
+
+  &__link {
+    @extend %textLinkStyle;
+  }
+}
+
