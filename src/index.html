@@ -28,16 +28,18 @@
       <a href="#">Подробнее</a>
     </section>
     <section class="quote" aria-label="Цитаты">
-      <picture>
+      <picture class="quote__image-box">
         <source srcset="<%=require('./images/quote_2x.png')%>" media="(min-width: 1440px)">
         <source srcset="<%=require('./images/quote.png')%>" media="(max-width: 1439px)">
-        <img src="<%=require('./images/quote.png')%>" alt="Дорога, северный пейзаж, туман, велосипед">
+        <img class="quote__image" src="<%=require('./images/quote.png')%>"
+          alt="Дорога, северный пейзаж, туман, велосипед">
       </picture>
-      <figure>
-        <blockquote>«Катайся много или мало, долго или коротко, как хочешь - но катайся»</blockquote>
+      <figure class="quote__text-box">
+        <blockquote class="quote__text">«Катайся много или мало, долго или коротко, как хочешь - но катайся»
+        </blockquote>
         <figcaption>
-          <p>Эдди Меркс</p>
-          <p>Велогонщик</p>
+          <p class="quote__text-author">Эдди Меркс</p>
+          <p class="quote__text-author-info">Велогонщик</p>
         </figcaption>
       </figure>
     </section>
@@ -55,19 +57,23 @@
       </nav>
     </section>
     <section class="training" id="training">
-      <h2>Тренировки</h2>
-      <p>Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать эти тренировки поможет
-        приложение Strava, а также это приложение позволит построить тренировочный план.</p>
+      <div class="training__text-box">
+        <h2 class="training__title">Тренировки</h2>
+        <p class="training__text">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать
+          эти
+          тренировки поможет
+          приложение Strava, а также это приложение позволит построить тренировочный план.</p>
+        <nav class="training__links-box">
+          <a class="training__link" href="https://www.strava.com">Strava</a>
+          <a class="training__link" href="https://www.komoot.com">Komoot</a>
+        </nav>
+      </div>
+      <picture class="training__image-box">
+        <source srcset="<%=require('./images/training_2x.png')%>" media="(min-width: 1440px)">
+        <source srcset="<%=require('./images/training.png')%>" media="(max-width: 1439px)">
+        <img class="training__image" src="<%=require('./images/training.png')%>" alt="Дорога, лес, поворот">
+      </picture>
     </section>
-    <nav>
-      <a href="https://www.strava.com">Strava</a>
-      <a href="https://www.komoot.com">Komoot</a>
-    </nav>
-    <picture>
-      <source srcset="<%=require('./images/training_2x.png')%>" media="(min-width: 1440px)">
-      <source srcset="<%=require('./images/training.png')%>" media="(max-width: 1439px)">
-      <img src="<%=require('./images/training.png')%>" alt="Дорога, лес, поворот">
-    </picture>
   </main>
   <footer class="footer">
     <h3>Подпишитесь на рассылку&nbsp;—</h3>
