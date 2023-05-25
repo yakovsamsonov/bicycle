@@ -1,0 +1,51 @@
+.training {
+  @extend %limitedWidthSection;
+  @include flex(row, center, stretch, 160px);
+  padding: 150px $horizontalLargePadding $verticalLargePadding;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    padding: 150px $horizontalPadding $verticalLargePadding;
+  }
+
+  @media screen and (max-width: $mobileToTabletWidth) {
+    @include flex(column, center, center, 40px);
+    padding: $verticalPaddingMobile $horizontalPaddingMobile 60px;
+  }
+
+  &__text-box {
+    @include flex(column, space-between, flex-start, 50px);
+    max-width: 460px;
+  }
+
+  &__image-box {
+    display: block;
+    max-width: 580px;
+    min-width: 284px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: scale-down;
+  }
+
+  &__title {
+    @extend %headerFont;
+
+  }
+
+  &__text {
+    @extend %mainTextFont;
+    flex: 1;
+  }
+
+  &__links-box {
+    @include flex(row, flex-start, center, 30px);
+  }
+
+  &__link {
+    @extend %textRegularLink;
+    vertical-align: top;
+    min-height: 28px;
+  }
+}

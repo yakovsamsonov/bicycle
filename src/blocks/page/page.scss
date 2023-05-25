@@ -1,5 +1,5 @@
 .page {
-  @include flex(column, center, center, 0px);
+  @include flex(column, center, center);
   font-family: $fontFamily;
   background-color: $lightBackground;
   min-width: 304px;

@@ -2,6 +2,7 @@
   src: url("./fonts/Inter/Inter-Bold.woff2") format("woff2"),
     url("./fonts/Inter/Inter-Bold.woff") format("woff");
   font-family: "Inter";
+  font-style: normal;
   font-weight: 700; /*Bold https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight */
 }
 
@@ -9,6 +10,7 @@
   src: url("./fonts/Inter/Inter-SemiBold.woff2") format("woff2"),
     url("./fonts/Inter/Inter-SemiBold.woff") format("woff");
   font-family: "Inter";
+  font-style: normal;
   font-weight: 600; /*Semi Bold*/
 }
 
@@ -16,6 +18,7 @@
   src: url("./fonts/Inter/Inter-Medium.woff2") format("woff2"),
     url("./fonts/Inter/Inter-Medium.woff") format("woff");
   font-family: "Inter";
+  font-style: normal;
   font-weight: 500; /*Medium*/
 }
 
@@ -23,5 +26,6 @@
   src: url("./fonts/Inter/Inter-Regular.woff2") format("woff2"),
     url("./fonts/Inter/Inter-Regular.woff") format("woff");
   font-family: "Inter";
+  font-style: normal;
   font-weight: 400; /*Normal*/
 }

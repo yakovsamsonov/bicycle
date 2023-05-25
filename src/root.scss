@@ -1,29 +1,52 @@
 
+$tabletToDesktopWidth: 1439px;
+$mobileToTabletWidth: 767px;
+
 $lightBackground: #f4f4f4;
 $darkBackground: #333333;
 $lightGreen: #24B47E;
 $darkGreen: #319E75;
 
-
+$fontStyle: normal;
 $fontFamily: 'Inter', 'Arial', sans-serif;
+$letterSpacing: -0.5px;
+$fontMainColor: #151515;
+$fontSecondaryColor: #222222;
 $linkHoverOpacity: 0.75;
 
-$horizontalPadding: 120px;
+$horizontalLargePadding: 120px;
+$horizontalPadding: 60px;
 $horizontalPaddingMobile: 18px;
-$verticalPadding: 60px;
 $verticalLargePadding: 120px;
+$verticalPadding: 60px;
+$verticalPaddingMobile: 40px;
 
-@mixin flex($flex-direction, $justify-content, $align-items, $gap) {
+$decorativeLineOffset: 20px;
+
+$customCursor: url("../images/icons/pointer.svg"), pointer;
+
+
+
+@mixin flex($flex-direction, $justify-content, $align-items, $gap: 0) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
-  gap: $gap;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+
 }
 
 %zeroSpaces {
-  margin: 0;
-  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
 %limitedWidthSection {
@@ -32,27 +55,94 @@ $verticalLargePadding: 120px;
   width: 100%;
 }
 
-%headerFontStyle {
-  font-style: normal;
+%commonText {
+  @extend %zeroSpaces;
+  color: $fontMainColor;
+  font-style: $fontStyle;
+}
+
+%headerFont {
+  @extend %commonText;
+  letter-spacing: $letterSpacing;
   font-weight: 700;
   font-size: 55px;
   line-height: 60px;
-  letter-spacing: -0.5px;
-  color: #151515;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
-%textLinkStyle {
+%importantTextFont {
+  @extend %commonText;
+  letter-spacing: $letterSpacing;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 44px;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    font-size: 23px;
+    line-height: 29px;
+  }
+}
+
+%mainTextFont {
+  @extend %zeroSpaces;
+  font-weight: 400;
+  font-size: 18px;
+  color: $fontSecondaryColor;
+  opacity: 0.7;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+%commonLink {
+  @extend %commonText;
   text-decoration: none;
   opacity: 1;
   transition: opacity .3s;
 
   &:hover {
-    cursor: pointer;
+    cursor: $customCursor;
     opacity: $linkHoverOpacity;
   }
 
   &:visited {
     color: inherit;
+  }
+}
+
+%textHeaderLink {
+  @extend %commonLink;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    font-size: 18px;
+  }
+}
+
+%textRegularLink {
+  @extend %commonLink;
+  font-weight: 600;
+  font-size: 18px;
+
+  &_disabled {
+    font-weight: 400;
+    opacity: 0.75;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    font-size: 14px;
   }
 }
 

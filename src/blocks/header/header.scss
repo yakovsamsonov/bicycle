@@ -1,6 +1,10 @@
 .header {
   @extend %limitedWidthSection;
+  position: sticky;
+  top: 0px;
+  background-color: $lightBackground;
   padding: 28px $horizontalPadding;
+
   float: right;
 
   &__link-box {
@@ -8,7 +12,7 @@
   }
 
   &__link {
-    @extend %textLinkStyle;
+    @extend %textHeaderLink;
   }
 }
 
