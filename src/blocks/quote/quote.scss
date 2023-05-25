@@ -18,19 +18,7 @@
     max-width: 650px;
     min-width: 284px;
     position: relative;
-
-    &::before {
-      content: " ";
-      display: none;
-      position: relative;
-      top: calc(-1 * $decorativeLineOffset);
-      width: 100%;
-      border-top: 1px solid #E3E3E3;
-
-      @media screen and (max-width: $mobileToTabletWidth) {
-        display: block;
-      }
-    }
+    @include decorativeLine($decorativeLineOffset);
   }
 
   &__image {
@@ -62,7 +50,7 @@
 
     @media screen and (max-width: $tabletToDesktopWidth) {
       font-size: 14px;
-      line-height: 22px;
+      min-height: 22px;
     }
   }
 
@@ -75,6 +63,7 @@
 
     @media screen and (max-width: $tabletToDesktopWidth) {
       font-size: 10px;
+      min-height: 16px;
       line-height: 16px;
     }
   }

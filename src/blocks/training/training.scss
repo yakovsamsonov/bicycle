@@ -1,6 +1,10 @@
 .training {
   @extend %limitedWidthSection;
-  @include flex(row, center, stretch, 160px);
+  display: grid;
+  column-gap: 150px;
+  row-gap: 50px;
+  grid-template-columns: fit-content(460px) fit-content(580px);
+  grid-template-rows: min-content 1fr min-content;
   padding: 150px $horizontalLargePadding $verticalLargePadding;
 
   @media screen and (max-width: $tabletToDesktopWidth) {
@@ -8,19 +12,33 @@
   }
 
   @media screen and (max-width: $mobileToTabletWidth) {
-    @include flex(column, center, center, 40px);
-    padding: $verticalPaddingMobile $horizontalPaddingMobile 60px;
+    padding: calc($verticalPaddingMobile + $decorativeLineOffsetLarge) $horizontalPaddingMobile 60px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: stretch;
+    row-gap: 40px;
   }
 
   &__text-box {
     @include flex(column, space-between, flex-start, 50px);
     max-width: 460px;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      gap: 40px;
+    }
   }
 
   &__image-box {
+    grid-column: 2/3;
+    grid-row: 1/4;
     display: block;
-    max-width: 580px;
     min-width: 284px;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      grid-column: unset;
+      grid-row: unset;
+      justify-self: center;
+    }
   }
 
   &__image {
@@ -31,21 +49,28 @@
 
   &__title {
     @extend %headerFont;
-
+    position: relative;
+    @include decorativeLine($decorativeLineOffsetLarge);
   }
 
   &__text {
+    display: block;
     @extend %mainTextFont;
-    flex: 1;
+    justify-self: center;
   }
 
   &__links-box {
     @include flex(row, flex-start, center, 30px);
+    justify-self: start;
   }
 
   &__link {
     @extend %textRegularLink;
     vertical-align: top;
     min-height: 28px;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      min-height: 20px;
+    }
   }
 }

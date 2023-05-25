@@ -57,22 +57,20 @@
       </nav>
     </section>
     <section class="training" id="training">
-      <div class="training__text-box">
-        <h2 class="training__title">Тренировки</h2>
-        <p class="training__text">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать
-          эти
-          тренировки поможет
-          приложение Strava, а также это приложение позволит построить тренировочный план.</p>
-        <nav class="training__links-box">
-          <a class="training__link" href="https://www.strava.com">Strava</a>
-          <a class="training__link" href="https://www.komoot.com">Komoot</a>
-        </nav>
-      </div>
+      <h2 class="training__title">Тренировки</h2>
       <picture class="training__image-box">
         <source srcset="<%=require('./images/training_2x.png')%>" media="(min-width: 1440px)">
         <source srcset="<%=require('./images/training.png')%>" media="(max-width: 1439px)">
         <img class="training__image" src="<%=require('./images/training.png')%>" alt="Дорога, лес, поворот">
       </picture>
+      <p class="training__text">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать
+        эти
+        тренировки поможет
+        приложение Strava, а также это приложение позволит построить тренировочный план.</p>
+      <nav class="training__links-box">
+        <a class="training__link" href="https://www.strava.com">Strava</a>
+        <a class="training__link" href="https://www.komoot.com">Komoot</a>
+      </nav>
     </section>
   </main>
   <footer class="footer">

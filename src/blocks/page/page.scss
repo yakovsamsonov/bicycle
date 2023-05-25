@@ -3,6 +3,11 @@
   font-family: $fontFamily;
   background-color: $lightBackground;
   min-width: 304px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &_dark {
     background-color: $darkBackground;

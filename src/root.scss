@@ -22,6 +22,7 @@ $verticalPadding: 60px;
 $verticalPaddingMobile: 40px;
 
 $decorativeLineOffset: 20px;
+$decorativeLineOffsetLarge: 40px;
 
 $customCursor: url("../images/icons/pointer.svg"), pointer;
 
@@ -35,7 +36,22 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   @if $gap != 0 {
     gap: $gap;
   }
+}
 
+@mixin decorativeLine($offset: $decorativeLineOffset) {
+  &::before {
+    content: " ";
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(-1 * $offset);
+    width: 100%;
+    border-top: 1px solid #E3E3E3;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: block;
+    }
+  }
 }
 
 %zeroSpaces {
@@ -151,3 +167,5 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   text-decoration: none;
   text-align: center;
 }
+
+
