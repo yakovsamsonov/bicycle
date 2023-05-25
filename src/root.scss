@@ -6,6 +6,7 @@ $lightBackground: #f4f4f4;
 $darkBackground: #333333;
 $lightGreen: #24B47E;
 $darkGreen: #319E75;
+$white: #ffffff;
 
 $fontStyle: normal;
 $fontFamily: 'Inter', 'Arial', sans-serif;
@@ -162,10 +163,20 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   }
 }
 
-%buttonLinkStyle {
+%buttonLink {
   display: block;
   text-decoration: none;
   text-align: center;
+  color: $white;
+  font-style: $fontStyle;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+
+  &:hover {
+    cursor: $customCursor;
+  }
 }
 
 

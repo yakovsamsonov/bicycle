@@ -1,6 +1,7 @@
 .header {
   @extend %limitedWidthSection;
   position: sticky;
+  z-index: 99;
   top: 0px;
   background-color: $lightBackground;
   padding: 28px $horizontalPadding;
