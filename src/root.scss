@@ -1,5 +1,6 @@
 
 $tabletToDesktopWidth: 1439px;
+$tabletExtra1Width: 1023px;
 $mobileToTabletWidth: 767px;
 
 $lightBackground: #f4f4f4;
@@ -179,4 +180,15 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   }
 }
 
+%movingBackgroundButton {
+  background-image: linear-gradient(to right, $lightGreen 50%, $darkGreen 50%);
+  background-position: left;
+  background-size: 200%;
+  transition: background-position 0.3s ease-in-out;
+
+
+  &:hover {
+    background-position: right;
+  }
+}
 

@@ -22,25 +22,27 @@
   </header>
   <main class="content">
     <section class="intro">
-      <h1 class="intro__title">Шоссе, ТТ и Грэвел</h1>
+      <h1 class="intro__title">Шоссе, ТТ и&nbsp;Грэвел</h1>
+      <div class="intro__images-box">
+        <picture class="intro__background-image-box">
+          <source srcset="<%=require('./images/intro_2x.png')%>" media="(min-width: 1440px)">
+          <source srcset="<%=require('./images/intro.png')%>" media="(max-width: 1439px)">
+          <img class="intro__background-image" src="<%=require('./images/intro.png')%>" alt="Дорога, лес, пейзаж">
+        </picture>
+        <div class="intro__moving-area">
+          <picture class="intro__moving-image-box">
+            <source srcset="<%=require('./images/cannondale_systemsix_wide_2x.png')%>" media="(min-width: 1440px)">
+            <source srcset="<%=require('./images/cannondale_systemsix_wide.png')%>" media="(max-width: 1439px)">
+            <img class="intro__moving-image" src="<%=require('./images/cannondale_systemsix_wide.png')%>"
+              alt="Велосипед, Cannondale, Systemsix">
+          </picture>
+        </div>
+      </div>
       <p class="intro__text">Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам –
         нужно только определиться с
         выбором велосипеда и отправиться в путь.</p>
       <a class="intro__extra-button" href="#">Подробнее</a>
       <p class="intro__model-name">Cannondale Systemsix</p>
-      <picture class="intro__background-image-box">
-        <source srcset="<%=require('./images/intro_2x.png')%>" media="(min-width: 1440px)">
-        <source srcset="<%=require('./images/intro.png')%>" media="(max-width: 1439px)">
-        <img class="intro__background-image" src="<%=require('./images/intro.png')%>" alt="Дорога, лес, пейзаж">
-      </picture>
-      <div class="intro__moving-area">
-        <picture class="intro__moving-image-box">
-          <source srcset="<%=require('./images/cannondale_systemsix_wide_2x.png')%>" media="(min-width: 1440px)">
-          <source srcset="<%=require('./images/cannondale_systemsix_wide.png')%>" media="(max-width: 1439px)">
-          <img class="intro__moving-image" src="<%=require('./images/cannondale_systemsix_wide.png')%>"
-            alt="Велосипед, Cannondale, Systemsix">
-        </picture>
-      </div>
     </section>
     <section class="quote" aria-label="Цитаты">
       <picture class="quote__image-box">
