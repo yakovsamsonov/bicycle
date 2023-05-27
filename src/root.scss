@@ -118,6 +118,18 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   }
 }
 
+%labelFont {
+  @extend %commonText;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
 %commonLink {
   @extend %commonText;
   text-decoration: none;
@@ -174,6 +186,15 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 1px;
+
+  &:hover {
+    cursor: $customCursor;
+  }
+}
+
+%cardLink {
+  display: block;
+  text-decoration: none;
 
   &:hover {
     cursor: $customCursor;

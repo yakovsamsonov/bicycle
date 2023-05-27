@@ -66,12 +66,107 @@
         в командном пелотоне, но тренироваться можно и самостоятельно.</p>
     </section>
     <section class="bicycle" id="bicycle">
-      <h2>Велосипеды</h2>
-      <nav>
-        <button type="radio">Шоссе</button>
-        <button type="radio">Грэвел</button>
-        <button type="radio">TT</button>
-      </nav>
+      <div class="bicycle__text-box">
+        <h2 class="bicycle__title">Велосипеды</h2>
+        <form class="bicycle__selector-box" name="bicycle">
+          <fieldset class="bicycle__selector_type_radio">
+            <label for="sub">
+              <input class="bicycle__type" id="sub" name="type" value="sub" type="radio" checked>
+              <span class="bicycle__pseudo-type">Шоссе</span>
+            </label>
+            <label for="gravel">
+              <input class="bicycle__type" id="gravel" name="type" value="gravel" type="radio">
+              <span class="bicycle__pseudo-type">Грэвел</span>
+            </label>
+            <label for="tt">
+              <input class="bicycle__type" id="tt" name="type" value="tt" type="radio">
+              <span class="bicycle__pseudo-type">ТТ</span>
+            </label>
+          </fieldset>
+          <fieldset class="bicycle__selector_type_dropdown">
+            <select>
+              <option>Шоссе</option>
+              <option>Грэвел</option>
+              <option>TT</option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+      <div class="cards-container">
+        <div class="cards-container__slide cards-container__slide_selected">
+          <a href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/cervelo_caledonia.png')%>" alt="Cervelo Caledonia 5">
+              <figcaption class="card__label">Cervelo Caledonia 5</figcaption>
+            </figure>
+          </a>
+          <a href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/cannondale_systemsix_himod.png')%>"
+                alt="Cannondale Systemsix Himod">
+              <figcaption class="card__label">Cannondale Systemsix Himod</figcaption>
+            </figure>
+          </a>
+          <a href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/trek_domane.png')%>" alt="Trek Domane SL-7">
+              <figcaption class="card__label">Trek Domane SL-7</figcaption>
+            </figure>
+          </a>
+        </div>
+        <div class="cards-container__slide">
+          <a href="https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/cervelo_aspero.png')%>" alt="Cervelo Aspero GRX 810">
+              <figcaption class="card__label">Cervelo Aspero GRX 810</figcaption>
+            </figure>
+          </a>
+          <a href="https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9" target="_blank"
+            class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/specialized_s_works.png')%>"
+                alt="Specialized S-Works Diverge">
+              <figcaption class="card__label">Specialized S-Works Diverge</figcaption>
+            </figure>
+          </a>
+          <a href="https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/cannondale_topstone.png')%>"
+                alt="Cannondale Topstone Lefty 3">
+              <figcaption class="card__label">Cannondale Topstone Lefty 3</figcaption>
+            </figure>
+          </a>
+        </div>
+        <div class="cards-container__slide">
+          <a href="https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/specialized_s_works_shiv.png')%>"
+                alt="Specialized S-Works Shiv">
+              <figcaption class="card__label">Specialized S-Works Shiv</figcaption>
+            </figure>
+          </a>
+          <a href="https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/bmc_timemachine.png')%>" alt="BMC Timemachine 01 ONE">
+              <figcaption class="card__label">BMC Timemachine 01 ONE</figcaption>
+            </figure>
+          </a>
+          <a href="https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q"
+            target="_blank" class="card__link">
+            <figure class="card">
+              <img class="card__image" src="<%=require('./images/cervelo_p_series.png')%>" alt="Cervelo P-Series">
+              <figcaption class="card__label">Cervelo P-Series</figcaption>
+            </figure>
+          </a>
+        </div>
+      </div>
     </section>
     <section class="training" id="training">
       <h2 class="training__title">Тренировки</h2>
@@ -85,8 +180,8 @@
         тренировки поможет
         приложение Strava, а также это приложение позволит построить тренировочный план.</p>
       <nav class="training__links-box">
-        <a class="training__link" href="https://www.strava.com">Strava</a>
-        <a class="training__link" href="https://www.komoot.com">Komoot</a>
+        <a class="training__link" href="https://www.strava.com" target="_blank">Strava</a>
+        <a class="training__link" href="https://www.komoot.com" target="_blank">Komoot</a>
       </nav>
     </section>
   </main>

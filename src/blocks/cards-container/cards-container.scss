@@ -1,0 +1,15 @@
+.cards-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 120px;
+  overflow: visible;
+
+  &__slide {
+    display: none;
+    overflow: visible;
+
+    &_selected {
+      @include flex(row, space-between, center, 30px);
+    }
+  }
+}

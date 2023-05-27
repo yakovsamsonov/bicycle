@@ -1,0 +1,55 @@
+.bicycle {
+  @extend %limitedWidthSection;
+  padding: $verticalPadding $horizontalLargePadding;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    padding: $verticalPadding $horizontalPadding;
+  }
+
+  @media screen and (max-width: $mobileToTabletWidth) {
+    padding: $verticalPaddingMobile $horizontalPaddingMobile;
+  }
+
+  &__text-box {
+    @include flex(row, space-between, center);
+  }
+
+  &__title {
+    @extend %headerFont;
+  }
+
+  &__selector_type_radio {
+    @extend %zeroSpaces;
+    border: none;
+    @include flex(row, space-between, center, 30px)
+  }
+
+  &__selector_type_dropdown {
+    display: none;
+  }
+
+  &__type {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+
+    &:checked+.bicycle__pseudo-type {
+      font-weight: 600;
+      font-size: 18px;
+      opacity: 0.75;
+    }
+  }
+
+  &__pseudo-type {
+    line-height: 28px;
+    opacity: 0.7;
+    transition: opacity .3s;
+
+    &:hover {
+      cursor: $customCursor;
+      opacity: 0.6;
+    }
+  }
+}
