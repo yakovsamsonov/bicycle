@@ -1,0 +1,51 @@
+.theme-switcher {
+  padding: 2px;
+  width: 44px;
+  height: 24px;
+  background-color: $white;
+  border-radius: 9999px;
+  position: relative;
+
+  &__bubble {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 9999px;
+    width: 20px;
+    height: 20px;
+    background-color: $lightGreen;
+    float: left;
+    transition: float 0.5s ease-in-out;
+
+    &_type_right {
+      float: right;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    background-image: url("../images/icons/day_mode.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    left: -50px;
+    top: -4px;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    background-image: url("../images/icons/night_mode.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    right: -50px;
+    top: -4px;
+  }
+}

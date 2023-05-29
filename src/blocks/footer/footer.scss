@@ -1,0 +1,105 @@
+.footer {
+  @extend %limitedWidthSection;
+  @include flex(row, space-between, stretch);
+  background-color: #efefef;
+  padding: 80px $horizontalLargePadding $verticalPadding;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    padding: 80px $horizontalPadding $verticalPadding;
+  }
+
+  @media screen and (max-width: $mobileToTabletWidth) {
+    padding: $verticalPadding $horizontalPaddingMobile 16px;
+    @include flex(row, center, stretch);
+  }
+
+  &__content {
+    width: 100%;
+    @include flex(column, flex-start, flex-start, 50px);
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      @include flex(column, flex-start, stretch, 40px);
+    }
+  }
+
+  &__company-info-box {
+    margin-top: 50px;
+    @include flex(row, space-between, center);
+  }
+
+  &__company-name {
+    @extend %commonText;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #CFCFCF;
+  }
+
+  &__company-logo {
+    display: none;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: block;
+    }
+  }
+
+  &__title {
+    display: block;
+    @extend %commonText;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 284px;
+  }
+
+  &__form {
+    @extend %zeroSpaces;
+    @include flex(row, space-between, center);
+    box-sizing: border-box;
+    padding: 11px 20px;
+    max-width: 360px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgba(199, 199, 199, 0.5);
+
+  }
+
+  &__form-field {
+    @extend %formFont;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    background-color: unset;
+    color: $fontSecondaryColor;
+    opacity: 0.7;
+    transition: opacity .3s;
+    outline: none;
+
+    &:hover {
+      cursor: $customCursor;
+      color: $fontMainColor;
+      opacity: 1;
+    }
+
+  }
+
+  &__form-field-label {
+    @extend %formFont;
+    display: none;
+
+    &_visible {
+      display: block;
+    }
+  }
+
+  &__switcher {
+    box-sizing: border-box;
+    margin-right: 50px;
+    margin-bottom: 8px;
+    align-self: flex-end;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: none;
+    }
+  }
+}

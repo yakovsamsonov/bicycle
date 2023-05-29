@@ -186,10 +186,20 @@
     </section>
   </main>
   <footer class="footer">
-    <h3>Подпишитесь на рассылку&nbsp;—</h3>
-    <form></form>
-    <p>© Road Club 2021</p>
-    <div></div>
+    <div class="footer__content">
+      <h3 class="footer__title">Подпишитесь на рассылку&nbsp;—</h3>
+      <form class="footer__form" name="email" novalidate>
+        <input type="email" class="footer__form-field form-field" placeholder="Ваш e-mail"></input><span
+          class="footer__form-field-label">ok</span>
+      </form>
+      <div class="footer__company-info-box">
+        <p class="footer__company-name">© Road Club 2021</p>
+        <img class="footer__company-logo" src="<%=require('./images/icons/logo.svg')%>" alt="Логотип компании">
+      </div>
+    </div>
+    <div class="footer__switcher theme-switcher">
+      <div class="theme-switcher__bubble"></div>
+    </div>
   </footer>
 
 </body>
