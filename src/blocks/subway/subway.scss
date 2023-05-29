@@ -11,6 +11,11 @@
     padding: calc($verticalPaddingMobile + $decorativeLineOffsetLarge)  $horizontalPaddingMobile $verticalPaddingMobile;
   }
 
+  &__decor {
+    position: relative;
+    @include decorativeLine($decorativeLineOffsetLarge);
+  }
+
   &__slide {
     @include flex(column, space-between, flex-start, 50px);
     max-width: 650px;
@@ -19,8 +24,6 @@
 
   &__title {
     @extend %headerFont;
-    position: relative;
-    @include decorativeLine($decorativeLineOffsetLarge);
     max-width: 460px;
     opacity: 1;
 
