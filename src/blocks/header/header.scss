@@ -5,15 +5,61 @@
   top: 0px;
   background-color: $lightBackground;
   padding: 28px $horizontalPadding;
-
   float: right;
+  transition: height 10s ease-in-out;
+
+  @media screen and (max-width: $mobileToTabletWidth) {
+    padding: 28px $horizontalPaddingMobile;
+    @include flex(column, space-between, center, 96px);
+  }
 
   &__link-box {
-    @include flex(row, flex-end, center, 34px)
+    @include flex(row, flex-end, center, 34px);
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: none;
+      flex: 1;
+
+      &_visible {
+        @include flex(column, flex-start, center, 32px)
+      }
+    }
+
   }
 
   &__link {
     @extend %textHeaderLink;
+  }
+
+  &__menu {
+    display: none;
+    align-self: flex-end;
+    box-sizing: border-box;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-image: url("../images/icons/button-open.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: block;
+    }
+
+    &_closed {
+      background-image: url("../images/icons/button-close.svg");
+    }
+  }
+
+  &__switcher {
+    display: none;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      justify-self: self-end;
+      &_visible {
+        display: block;
+      }
+    }
   }
 }
 

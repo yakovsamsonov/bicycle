@@ -1,9 +1,14 @@
-export default function initAnimation() {
+import { menuButton } from "./contants.js";
+
+export default function initAnimation(processHeader) {
   const animatedScrolls = Array.from(
     document.querySelectorAll(".animated-scroll")
   );
   animatedScrolls.forEach((el) => {
-    el.addEventListener("click", processLinkClick);
+    el.addEventListener("click", (evt) => {
+      processHeader(menuButton);
+      processLinkClick(evt);
+    });
   });
 }
 

@@ -1,0 +1,85 @@
+.subway {
+  @extend %limitedWidthSection;
+  position: relative;
+  padding: $verticalPadding $horizontalLargePadding;
+
+  @media screen and (max-width: $tabletToDesktopWidth) {
+    padding: $verticalPadding $horizontalPadding;
+  }
+
+  @media screen and (max-width: $mobileToTabletWidth) {
+    padding: calc($verticalPaddingMobile + $decorativeLineOffsetLarge)  $horizontalPaddingMobile $verticalPaddingMobile;
+  }
+
+  &__slide {
+    @include flex(column, space-between, flex-start, 50px);
+    max-width: 650px;
+    width: 100%;
+  }
+
+  &__title {
+    @extend %headerFont;
+    position: relative;
+    @include decorativeLine($decorativeLineOffsetLarge);
+    max-width: 460px;
+    opacity: 1;
+
+    &_hidden {
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    @extend %mainTextFont;
+    max-width: 460px;
+    opacity: 1;
+
+    &_hidden {
+      opacity: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__control-box {
+    @include flex(row, center, center, 20px);
+    margin-top: 50px;
+    float: left;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      gap: 10px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background-color: #ebebeb;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 18px;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      width: 24px;
+      height: 24px;
+      border-radius: 30px;
+      background-size: 5px 9px;
+    }
+
+    &_side_left {
+      background-image: url("../images/icons/left-arrow.svg");
+    }
+
+    &_side_right {
+      background-image: url("../images/icons/right-arrow.svg");
+    }
+  }
+}
