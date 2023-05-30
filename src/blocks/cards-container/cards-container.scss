@@ -2,14 +2,25 @@
   width: 100%;
   box-sizing: border-box;
   padding-top: 120px;
-  overflow: visible;
+
+  @media screen and (max-width: $mobileToTabletWidth) {
+    padding-top: 20px;
+    overflow: hidden;
+  }
 
   &__slide {
     display: none;
-    overflow: visible;
 
     &_selected {
       @include flex(row, space-between, center, 30px);
+
+      @media screen and (max-width: $mobileToTabletWidth) {
+        overflow: hidden;
+        display: grid;
+        width: calc(3 * 100%);
+        grid-template-columns: repeat(3, 1fr);
+        gap: unset;
+      }
     }
   }
 }

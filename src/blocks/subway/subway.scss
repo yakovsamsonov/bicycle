@@ -2,6 +2,7 @@
   @extend %limitedWidthSection;
   position: relative;
   padding: $verticalPadding $horizontalLargePadding;
+  display: none;
 
   @media screen and (max-width: $tabletToDesktopWidth) {
     padding: $verticalPadding $horizontalPadding;
@@ -20,6 +21,10 @@
     @include flex(column, space-between, flex-start, 50px);
     max-width: 650px;
     width: 100%;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      max-width: 284px;
+    }
   }
 
   &__title {

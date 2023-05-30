@@ -2,16 +2,27 @@
   @extend %limitedWidthSection;
   padding: $verticalPadding $horizontalLargePadding;
 
+
   @media screen and (max-width: $tabletToDesktopWidth) {
     padding: $verticalPadding $horizontalPadding;
   }
 
   @media screen and (max-width: $mobileToTabletWidth) {
     padding: $verticalPaddingMobile $horizontalPaddingMobile;
+    overflow: hidden;
   }
 
   &__text-box {
     @include flex(row, space-between, center);
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      @include flex(column, space-between, flex-start, 40px)
+    }
+  }
+
+  &__decor {
+    position: relative;
+    @include decorativeLine($decorativeLineOffsetLarge);
   }
 
   &__title {
@@ -21,11 +32,34 @@
   &__selector_type_radio {
     @extend %zeroSpaces;
     border: none;
-    @include flex(row, space-between, center, 30px)
+    @include flex(row, space-between, center, 30px);
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: none;
+    }
   }
 
   &__selector_type_dropdown {
     display: none;
+    @extend %zeroSpaces;
+    border: 1px solid #e3e3e3;
+    border-radius: 2px;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      display: block;
+    }
+  }
+
+
+
+  &__selector {
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    @extend %commonText;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
   }
 
   &__type {
@@ -50,6 +84,26 @@
     &:hover {
       cursor: $customCursor;
       opacity: 0.6;
+    }
+  }
+
+  &__points-box {
+    margin-top: 20px;
+    display: none;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      @include flex(row, center, center, 5px)
+    }
+  }
+
+  &__point {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #cacaca;
+
+    &_selected {
+      background-color: $fontMainColor;
     }
   }
 }

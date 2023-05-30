@@ -5,14 +5,66 @@ import { Slider, InfiniteSlider } from "./scripts/slider.js";
 import {
   themeSwitchers,
   formFields,
+  bicycleForm,
   sliders,
   menuButton,
   header,
   headerLinkBox,
   headerSwitcher,
+  cardsContainer,
 } from "./scripts/contants.js";
 
 initAnimation(processMenuClick);
+
+const fieldsDesktop = Array.from(
+  bicycleForm.querySelectorAll(".bicycle__type")
+);
+
+const fieldsMobile = Array.from(
+  bicycleForm.querySelectorAll(".bicycle__selector-option")
+);
+
+const slides = Array.from(
+  cardsContainer.querySelectorAll(".cards-container__slide")
+);
+
+bicycleForm.addEventListener("input", (evt) => {
+  let selectedSlide;
+  const mode = evt.target.classList.contains("bicycle__type")
+    ? "desktop"
+    : "mobile";
+  if (mode === "desktop") {
+    selectedSlide = fieldsDesktop.find((field) => {
+      return field.checked;
+    }).value;
+  } else if (mode === "mobile") {
+    selectedSlide = fieldsMobile.find((option) => {
+      return option.selected;
+    }).value;
+  }
+
+  slides.forEach((slide) => {
+    if (slide.id === selectedSlide) {
+      slide.classList.add("cards-container__slide_selected");
+    } else {
+      slide.classList.remove("cards-container__slide_selected");
+    }
+
+    if (mode === "desktop") {
+      fieldsMobile.find((field) => {
+        if (field.value === selectedSlide) {
+          return field;
+        }
+      }).selected = true;
+    } else if (mode === "mobile") {
+      fieldsDesktop.find((field) => {
+        if (field.value === selectedSlide) {
+          return field;
+        }
+      }).checked = true;
+    }
+  });
+});
 
 themeSwitchers.forEach((switcher) => {
   switcher.addEventListener("click", (evt) => {
@@ -73,3 +125,5 @@ function processMenuClick(button) {
   }
   button.style.removeProperty("disabled");
 }
+
+setInterval(() => {}, 3000);
