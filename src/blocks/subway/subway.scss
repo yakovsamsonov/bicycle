@@ -1,8 +1,6 @@
 .subway {
   @extend %limitedWidthSection;
-  position: relative;
   padding: $verticalPadding $horizontalLargePadding;
-  display: none;
 
   @media screen and (max-width: $tabletToDesktopWidth) {
     padding: $verticalPadding $horizontalPadding;
@@ -18,16 +16,18 @@
   }
 
   &__slide {
+    box-sizing: border-box;
     @include flex(column, space-between, flex-start, 50px);
-    max-width: 650px;
     width: 100%;
 
     @media screen and (max-width: $mobileToTabletWidth) {
-      max-width: 284px;
+      // max-width: 284px;
     }
   }
 
   &__title {
+    display: block;
+    box-sizing: border-box;
     @extend %headerFont;
     max-width: 460px;
     opacity: 1;
@@ -38,20 +38,46 @@
   }
 
   &__text {
+    display: block;
+    box-sizing: border-box;
     @extend %mainTextFont;
     max-width: 460px;
     opacity: 1;
 
+    @media screen and (max-width: $mobileToTabletWidth) {
+      order: 99;
+    }
+
     &_hidden {
       opacity: 0;
+    }
+
+  }
+
+  &__image-box {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    overflow-x: hidden;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      height: unset;
+      max-height: 400px;
     }
   }
 
   &__image {
     display: block;
     box-sizing: border-box;
-    width: 100%;
+    object-fit: contain;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+
+    @media screen and (max-width: $mobileToTabletWidth) {
+      object-fit: scale-down;
+    }
   }
 
   &__control-box {
@@ -60,6 +86,11 @@
     float: left;
 
     @media screen and (max-width: $mobileToTabletWidth) {
+      position: absolute;
+      margin-top: unset;
+      top: 7px;
+      right: 0px;
+      z-index: 1;
       gap: 10px;
     }
   }

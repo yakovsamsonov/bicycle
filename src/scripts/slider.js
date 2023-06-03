@@ -60,28 +60,39 @@ class Slider {
   }
 
   _getStep() {
-    return 100 / this._totalItem;
+    let sliderStep = getComputedStyle(this._sliderContainer).getPropertyValue(
+      "--sliderStep"
+    );
+    if (sliderStep.endsWith("%")) {
+      sliderStep = sliderStep.replace("%", "");
+      return [sliderStep / this._totalItem, "%"];
+    } else if (sliderStep.endsWith("px")) {
+      sliderStep = sliderStep.replace("px", "");
+      return [sliderStep, "px"];
+    }
   }
 
   _getShift(position) {
     const shift = position ? position : this._currentItem;
-    return -1 * (shift - 1) * this._getStep();
+    const step = this._getStep();
+    return [-1 * (shift - 1) * step[0], step[1]];
   }
 
   _animatedMove(postion) {
     this._sliderContainer.style.transition = this.constructor.transitionStyle;
-    this._sliderContainer.style.translate = `${this._getShift(postion)}%`;
+    const shift = this._getShift(postion);
+    this._sliderContainer.style.translate = `${shift[0]}${shift[1]}`;
   }
 
   _instantMove(position) {
     this._sliderContainer.style.removeProperty("transition");
-    this._sliderContainer.style.translate = `${this._getShift(position)}%`;
+    const shift = this._getShift(position);
+    this._sliderContainer.style.translate = `${shift[0]}${shift[1]}`;
   }
 
   _drawSlider() {
     this._disableAllControls();
     this._animatedMove();
-
     setTimeout(() => {
       this._enableAllControls();
       this._calculateLabel();
@@ -151,7 +162,7 @@ class InfiniteSlider extends Slider {
     sliderSelector.remove();
     this._sliderContainer.prepend(item);
     this._instantMove(2);
-    this._hide();
+    // this._hide();
   }
 
   _moveLeft() {
@@ -159,7 +170,6 @@ class InfiniteSlider extends Slider {
       ".slider__item:last-of-type"
     );
     const item = sliderSelector.cloneNode(true);
-    this._hide();
     this._disableAllControls();
     this._animatedMove(1);
     setTimeout(() => {
@@ -167,6 +177,7 @@ class InfiniteSlider extends Slider {
       this._instantMove(2);
       this._sliderContainer.prepend(item);
       this._enableAllControls();
+      // this._hide();
     }, super.constructor.transitionTimeout);
   }
 
@@ -175,7 +186,6 @@ class InfiniteSlider extends Slider {
       ".slider__item:first-of-type"
     );
     const item = sliderSelector.cloneNode(true);
-    this._hide();
     this._disableAllControls();
     this._animatedMove(3);
     setTimeout(() => {
@@ -183,6 +193,7 @@ class InfiniteSlider extends Slider {
       this._instantMove(2);
       this._sliderContainer.append(item);
       this._enableAllControls();
+      // this._hide();
     }, super.constructor.transitionTimeout);
   }
 
