@@ -14,6 +14,7 @@ import {
   headerLinkBox,
   headerSwitcher,
   cardsContainer,
+  pointBox,
 } from "./scripts/contants.js";
 
 initAnimation(processMenuClick);
@@ -49,6 +50,8 @@ bicycleForm.addEventListener("input", (evt) => {
   slides.forEach((slide) => {
     if (slide.id === selectedSlide) {
       slide.classList.add("cards-container__slide_selected");
+      highlightPoint(pointBox, 1);
+      slide.style.translate = `0%`;
     } else {
       slide.classList.remove("cards-container__slide_selected");
     }
@@ -120,4 +123,55 @@ function processMenuClick(button) {
   button.style.removeProperty("disabled");
 }
 
-setInterval(() => {}, 3000);
+setInterval(() => {
+  const activeSlide = document.querySelector(
+    ".cards-container__slide_selected"
+  );
+  const mobileView =
+    getComputedStyle(document.querySelector(".bicycle__selector_type_dropdown"))
+      .display !== "none";
+
+  if (mobileView) {
+    const count = Array.from(
+      activeSlide.querySelectorAll(".card__link")
+    ).length;
+    const currentSlide = getCurrentSlide(pointBox);
+    const target = calculateTargetSlide(currentSlide, count);
+    activeSlide.style.translate = `${((target - 1) * -100) / count}%`;
+    highlightPoint(pointBox, target);
+  } else {
+    activeSlide.style.translate = "0%";
+  }
+}, 3000);
+
+function highlightPoint(pointBox, n) {
+  const points = Array.from(pointBox.querySelectorAll(".bicycle__point"));
+  points.forEach((point, id) => {
+    if (id + 1 === n) {
+      point.classList.add("bicycle__point_selected");
+    } else {
+      point.classList.remove("bicycle__point_selected");
+    }
+  });
+}
+
+function calculateTargetSlide(currentSlide, TotalSlides) {
+  let targetSlide;
+  if (currentSlide === TotalSlides) {
+    targetSlide = 1;
+  } else {
+    targetSlide = currentSlide + 1;
+  }
+  return targetSlide;
+}
+
+function getCurrentSlide(pointBox) {
+  const points = Array.from(pointBox.querySelectorAll(".bicycle__point"));
+  let currentId;
+  points.some((point, id) => {
+    if (point.classList.contains("bicycle__point_selected")) {
+      currentId = id;
+    }
+  });
+  return currentId + 1;
+}

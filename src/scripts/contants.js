@@ -17,3 +17,5 @@ export const headerLinkBox = header.querySelector(".header__link-box");
 export const headerSwitcher = header.querySelector(".header__switcher");
 
 export const cardsContainer = document.querySelector(".cards-container");
+
+export const pointBox = document.querySelector(".bicycle__points-box");
