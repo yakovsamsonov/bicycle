@@ -50,12 +50,11 @@
     }
   }
 
-
-
   &__selector {
     border: none;
     outline: none;
     padding: 8px 12px;
+    background-color: var(--mainBackgroundColor);
     @extend %commonText;
     font-weight: 600;
     font-size: 11px;
@@ -77,6 +76,7 @@
   }
 
   &__pseudo-type {
+    @extend %commonText;
     line-height: 28px;
     opacity: 0.7;
     transition: opacity .3s;
@@ -103,7 +103,7 @@
     background-color: #cacaca;
 
     &_selected {
-      background-color: $fontMainColor;
+      background-color: var(--mainFontColor);
     }
   }
 }

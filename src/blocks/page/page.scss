@@ -1,15 +1,21 @@
 .page {
+  --mainBackgroundColor: #f4f4f4;
+  --secondBackgroundColor: #efefef;
+  --buttonColor: #ebebeb;
+  --mainFontColor: #151515;
+  --secondFontColor: #222222;
+  --bluredColor: #cfcfcf;
+  --decorativeColor: #d7d4d4;
+  --switcherColor: #ffffff;
+
+
   @include flex(column, center, center);
   font-family: $fontFamily;
-  background-color: $lightBackground;
+  background-color: var(--mainBackgroundColor);
   min-width: 304px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  &_dark {
-    background-color: $darkBackground;
-  }
 }

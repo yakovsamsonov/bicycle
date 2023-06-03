@@ -1,3 +1,5 @@
+export const page = document.querySelector(".page");
+
 export const themeSwitchers = Array.from(
   document.querySelectorAll(".theme-switcher")
 );

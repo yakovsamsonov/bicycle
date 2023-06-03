@@ -147,7 +147,7 @@
 
     &::after {
       content: " ";
-      border: 1px solid #D7D4D4;
+      border: 1px solid var(--decorativeColor);
       position: absolute;
       right: 30px;
       top: 9px;

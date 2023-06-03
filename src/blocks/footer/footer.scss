@@ -1,7 +1,7 @@
 .footer {
   @extend %limitedWidthSection;
   @include flex(row, space-between, stretch);
-  background-color: #efefef;
+  background-color: var(--secondBackgroundColor);
   padding: 80px $horizontalLargePadding $verticalPadding;
 
   @media screen and (max-width: $tabletToDesktopWidth) {
@@ -32,7 +32,7 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
-    color: #CFCFCF;
+    color: var(--bluredColor);
   }
 
   &__company-logo {
@@ -70,15 +70,19 @@
     width: 100%;
     border: none;
     background-color: unset;
-    color: $fontSecondaryColor;
+    color: var(--secondFontColor);
     opacity: 0.7;
     transition: opacity .3s;
     outline: none;
 
     &:hover {
       cursor: $customCursor;
-      color: $fontMainColor;
+      color: var(--mainFontColor);
       opacity: 1;
+    }
+
+    &::placeholder {
+      @extend %commonText;
     }
 
   }

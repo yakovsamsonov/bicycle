@@ -4,16 +4,12 @@ $tabletExtra1Width: 1023px;
 $mobileToTabletWidth: 767px;
 
 $lightBackground: #f4f4f4;
-$darkBackground: #333333;
 $lightGreen: #24B47E;
 $darkGreen: #319E75;
-$white: #ffffff;
 
 $fontStyle: normal;
 $fontFamily: 'Inter', 'Arial', sans-serif;
 $letterSpacing: -0.5px;
-$fontMainColor: #151515;
-$fontSecondaryColor: #222222;
 $linkHoverOpacity: 0.75;
 
 $horizontalLargePadding: 120px;
@@ -84,7 +80,7 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
 
 %commonText {
   @extend %zeroSpaces;
-  color: $fontMainColor;
+  color: var(--mainFontColor);
   font-style: $fontStyle;
 }
 
@@ -118,7 +114,7 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   @extend %zeroSpaces;
   font-weight: 400;
   font-size: 18px;
-  color: $fontSecondaryColor;
+  color: var(--secondFontColor);
   opacity: 0.7;
 
   @media screen and (max-width: $tabletToDesktopWidth) {
@@ -159,7 +155,7 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   }
 
   &:visited {
-    color: inherit;
+    color: var(--mainFontColor);
   }
 }
 
@@ -197,7 +193,7 @@ $customCursor: url("../images/icons/pointer.svg"), pointer;
   display: block;
   text-decoration: none;
   text-align: center;
-  color: $white;
+  color: #ffffff;
   font-style: $fontStyle;
   font-weight: 600;
   font-size: 14px;

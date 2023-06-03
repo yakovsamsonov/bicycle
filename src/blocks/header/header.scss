@@ -3,7 +3,7 @@
   position: sticky;
   z-index: 99;
   top: 0px;
-  background-color: $lightBackground;
+  background-color: var(--mainBackgroundColor);
   padding: 28px $horizontalPadding;
   float: right;
   transition: height 10s ease-in-out;
@@ -38,6 +38,7 @@
     width: 22px;
     height: 22px;
     border: none;
+    background-color: unset;
     background-image: url("../images/icons/button-open.svg");
     background-repeat: no-repeat;
     background-position: center;
